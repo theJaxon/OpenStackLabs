@@ -251,7 +251,21 @@ Now run `./stack.sh` and let [DevStack](https://github.com/openstack/devstack/tr
 1- Launch cirros instance using tiny flavor and launch instance console
     - From instances tab inside Compute click "Launch instance"
     - Remaining steps are demonstrated using the images below
+    
+<details><summary>Cirros instance steps</summary>
+<p>
 
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q1/1.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q1/2.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q1/3.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q1/4.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q1/5.jpg">
+
+
+
+
+</p>
+</details>
 
 2- Create new flavor  1024 MB Ram 5 GB HD 1 vcpus
     - From the `admin` project in the admin sidebar > Compute > Flavours
