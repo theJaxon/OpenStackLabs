@@ -293,7 +293,7 @@ Now run `./stack.sh` and let [DevStack](https://github.com/openstack/devstack/tr
 
 4- Stop cirros instance and delete it
 
-<details><summary>Starting and sopping cirros</summary>
+<details><summary>Stopping and deleting cirros</summary>
 <p>
 
 <img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q4/1.jpg">
@@ -305,9 +305,28 @@ Now run `./stack.sh` and let [DevStack](https://github.com/openstack/devstack/tr
 
 5- Create new instance using the created flavor and image
 
+<details><summary>new instance creation</summary>
+<p>
+
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q5/1.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q5/2.jpg">
+
+</p>
+</details>
+
 6- stop/start the instance
 
-7- - Export any light vm from your system – import it in openstack as new image (Virtual box or vmware) then launch an instance form this new image 
+<details><summary>new instance creation</summary>
+<p>
+
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q6/1.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q6/2.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q6/3.jpg">
+
+</p>
+</details>
+
+7- Export any light vm from your system – import it in openstack as new image (Virtual box or vmware) then launch an instance form this new image 
 
 ***
 
