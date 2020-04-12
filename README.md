@@ -221,9 +221,7 @@ Now run `./stack.sh` and let [DevStack](https://github.com/openstack/devstack/tr
 <details><summary>Terminal after successfull installation</summary>
 <p>
 
-```python
-print("hello world!")
-```
+ <img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%201/FinalResult.jpeg">
 
 </p>
 </details>
@@ -231,9 +229,8 @@ print("hello world!")
 <details><summary>OpenStack Dashboard [Keystone auth]</summary>
 <p>
 
-```python
-print("hello world!")
-```
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%201/LoginPage.jpg">
+
 
 </p>
 </details>
@@ -241,9 +238,8 @@ print("hello world!")
 <details><summary>Horizon homepage</summary>
 <p>
 
-```python
-print("hello world!")
-```
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%201/Dashboard.jpg">
+
 
 </p>
 </details>
