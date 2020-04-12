@@ -269,11 +269,39 @@ Now run `./stack.sh` and let [DevStack](https://github.com/openstack/devstack/tr
 
 2- Create new flavor  1024 MB Ram 5 GB HD 1 vcpus
     - From the `admin` project in the admin sidebar > Compute > Flavours
+    
+<details><summary>Flavor creation</summary>
+<p>
+
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q2/1.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q2/2.jpg">
+
+</p>
+</details>
 
 3- Create new image based on ubuntu/centos image (make sure to use minimal image due to limited resources)
     - From `admin` project > admin > Compute > Images
+    
+<details><summary>Image creation</summary>
+<p>
+
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q3/1.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q3/2.jpg">
+
+</p>
+</details>
 
 4- Stop cirros instance and delete it
+
+<details><summary>Starting and sopping cirros</summary>
+<p>
+
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q4/1.jpg">
+<img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q4/2.jpg">
+
+</p>
+</details>
+
 
 5- Create new instance using the created flavor and image
 
