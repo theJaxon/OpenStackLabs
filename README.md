@@ -316,7 +316,7 @@ Now run `./stack.sh` and let [DevStack](https://github.com/openstack/devstack/tr
 
 6- stop/start the instance
 
-<details><summary>new instance creation</summary>
+<details><summary>Stopping then starting CentOS again</summary>
 <p>
 
 <img src="https://github.com/theJaxon/OpenStackLabs/blob/master/etc/Lab%202/Q6/1.jpg">
