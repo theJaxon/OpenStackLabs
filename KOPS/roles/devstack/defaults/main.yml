@@ -1,0 +1,3 @@
+dest_dir: /home/stack
+branch: stable/ussuri
+devstack_dir: /home/stack/devstack

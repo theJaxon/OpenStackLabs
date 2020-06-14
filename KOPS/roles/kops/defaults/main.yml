@@ -1,0 +1,2 @@
+kops_binary_url: https://github.com/kubernetes/kops/releases/download/v1.17.0/kops-linux-amd64
+kops_destination_dir: /usr/local/bin/kops

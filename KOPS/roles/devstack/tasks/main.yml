@@ -1,0 +1,77 @@
+- name: Create stack group
+  group:
+    name: stack
+    state: present
+
+- name: Create DevStack user
+  user:
+    name: stack
+    shell: /bin/bash
+    create_home: yes
+    home: "{{ dest_dir }}"
+    group: stack
+
+- name: Add root priviliges to stack user 
+  lineinfile:
+    dest: /etc/sudoers
+    line: "stack ALL=(ALL) NOPASSWD: ALL"
+    state: present
+
+- name: Create devstack directory 
+  file:
+    path: "{{ devstack_dir }}"
+    state: directory 
+  become: true
+  become_user: stack
+  become_method: sudo
+
+
+
+- name: Clone openstack ussuri branch 
+  git: 
+    repo: https://github.com/openstack-dev/devstack.git
+    dest: "{{ devstack_dir }}"
+    version: "{{ branch }}"
+    force: yes
+  become: true
+  become_user: stack
+  become_method: sudo
+
+- name: Download local.conf file
+  get_url:
+    url: https://raw.githubusercontent.com/theJaxon/OpenStackLabs/master/KOPS/config/local.conf
+    dest: "{{ devstack_dir }}/local.conf"
+    mode: '0777'
+    force: yes
+  become: true
+  become_user: stack
+  become_method: sudo
+
+
+- name: Download openrc file 
+  get_url:
+    url: https://raw.githubusercontent.com/theJaxon/OpenStackLabs/master/Lab%201/openrc
+    dest: "{{ devstack_dir }}/openrc"
+    mode: '0777'
+    force: yes
+  become: true
+  become_user: stack
+  become_method: sudo
+
+
+- name: Change stack.sh file permissions
+  file:
+    path: "{{ devstack_dir }}/stack.sh"
+    mode: '0777'
+  become: true
+  become_user: stack
+  become_method: sudo
+
+
+- name: Run devstack shell script 
+  command: /bin/bash /home/stack/devstack/stack.sh
+  become: true
+  become_user: stack
+  become_method: sudo
+
+
