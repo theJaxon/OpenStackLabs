@@ -1,0 +1,5 @@
+- name: download kops binary
+  get_url:
+    url: "{{ kops_binary_url }}"
+    dest: "{{ kops_destination_dir }}"
+    mode: '0777'

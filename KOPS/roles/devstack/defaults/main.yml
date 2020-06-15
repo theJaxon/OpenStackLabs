@@ -1,3 +1,4 @@
 dest_dir: /home/stack
 branch: stable/ussuri
 devstack_dir: /home/stack/devstack
+lib_path: /home/stack/devstack/lib

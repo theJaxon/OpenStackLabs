@@ -10,11 +10,12 @@
     create_home: yes
     home: "{{ dest_dir }}"
     group: stack
+    groups: sudo
 
 - name: Add root priviliges to stack user 
   lineinfile:
     dest: /etc/sudoers
-    line: "stack ALL=(ALL) NOPASSWD: ALL"
+    line: "stack ALL=(ALL:ALL) NOPASSWD:ALL"
     state: present
 
 - name: Create devstack directory 
@@ -39,7 +40,7 @@
 
 - name: Download local.conf file
   get_url:
-    url: https://raw.githubusercontent.com/theJaxon/OpenStackLabs/master/KOPS/config/local.conf
+    url: https://raw.githubusercontent.com/theJaxon/OpenStackLabs/master/KOPS/devstack/local.conf
     dest: "{{ devstack_dir }}/local.conf"
     mode: '0777'
     force: yes
@@ -58,6 +59,23 @@
   become_user: stack
   become_method: sudo
 
+- name: Download modified swift file 
+  get_url:
+    url: https://raw.githubusercontent.com/theJaxon/OpenStackLabs/master/KOPS/devstack/lib/swift
+    dest: "{{ lib_path }}/swift"
+    force: yes  
+  become: true
+  become_user: stack
+  become_method: sudo
+
+- name: Download modified kyestone file 
+  get_url:
+    url: https://raw.githubusercontent.com/theJaxon/OpenStackLabs/master/KOPS/devstack/lib/keystone
+    dest: "{{ lib_path }}/keystone"
+    force: yes  
+  become: true
+  become_user: stack
+  become_method: sudo
 
 - name: Change stack.sh file permissions
   file:
@@ -67,11 +85,20 @@
   become_user: stack
   become_method: sudo
 
+- name: Modify vagrant's .bashrc to login as stack
+  lineinfile:
+    dest: /home/vagrant/.bashrc
+    line: "sudo su - stack"
+    state: present
+
+- name: Modify stack .bashrc to cd into /home/stack/devstack 
+  lineinfile:
+    dest: /home/stack/.bashrc
+    line: "cd /home/stack/devstack"
+    state: present
 
 - name: Run devstack shell script 
   command: /bin/bash /home/stack/devstack/stack.sh
   become: true
   become_user: stack
   become_method: sudo
-
-
